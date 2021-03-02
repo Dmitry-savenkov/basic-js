@@ -9,5 +9,5 @@ module.exports = function createDreamTeam(array) {
     if(typeof(array[i]) === String){
       arr.push(array[i].slice(0,1))
     }
-    return arr.sort().join('').toUpperCase()
+    return String(arr.sort().join('').trim().toUpperCase())
 };
