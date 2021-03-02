@@ -1,8 +1,8 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function createDreamTeam(array) {
-  if (array === undefined){
-    return array
+  if (!(array instanceof Array)) {
+    return false
   }
   let arr = [];
   for ( let i = 0; i < array.length; i++){
