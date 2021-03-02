@@ -5,9 +5,11 @@ module.exports = function createDreamTeam(array) {
     return false
   }
   var arr = [];
-  for (let name of array) {
+  var tempStr = '';
+  for (let i = 0; i < array.length; i++) {
     if (typeof name === 'string')
-      arr.push(name[0].toUpperCase())
+      tempStr = array[i].trim();
+      arr.push(tempStr[0].toUpperCase())
     }
     return String(arr.sort().join(''))
 };
