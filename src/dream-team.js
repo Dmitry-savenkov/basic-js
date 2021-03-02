@@ -1,7 +1,7 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function createDreamTeam(array) {
-  if (!(array instanceof Array)) {
+  if(!Array.isArray(members)) {
     return false
   }
   var arr = [];
