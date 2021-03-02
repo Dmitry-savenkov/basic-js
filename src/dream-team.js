@@ -4,10 +4,10 @@ module.exports = function createDreamTeam(array) {
   if (!(array instanceof Array)) {
     return false
   }
-  let arr = [];
-  for ( let i = 0; i < array.length; i++){
-    if(typeof(array[i]) === String){
-      arr.push(array[i].slice(0,1))
+  var arr = [];
+  for (let name of array) {
+    if (typeof name === 'string')
+      arr.push(name[0].toUpperCase())
     }
-    return String(arr.sort().join('').trim().toUpperCase())
+    return String(arr.sort().join('').trim())
 };
