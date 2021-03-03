@@ -1,11 +1,10 @@
-onst CustomError = require("../extensions/custom-error");
+сonst CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
   
   if ( date === undefined ) {
     return 'Unable to determine the time of year!';
   }
-
   if (isNaN(date)) throw Error;
 
   let month = date.getMonth();
