@@ -1,14 +1,15 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform(arr) {
-  if (arr === undefined || arr.constructor != Array) throw Error('THROWN');
-  let result = [];
-  let flag = false;
+  if (arr === undefined || arr.constructor != Array)
+    throw Error('THROWN')
+  let result = []
+  let flag = false
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == '--discard-next') {
       if (arr[i + 1] !== undefined) {
         i++
-        flag = true;
+        flag = true
       }
     } else if (arr[i] == '--discard-prev') {
       if (arr[i - 1] !== undefined && flag == false) {
@@ -30,4 +31,3 @@ module.exports = function transform(arr) {
   }
   return result
 }
-};
