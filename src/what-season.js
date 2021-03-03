@@ -2,21 +2,22 @@
 
 module.exports = function getSeason(date) {
   
-  if ( date === undefined ) {
-    return 'Unable to determine the time of year!';
-  }
-  if (isNaN(date)) throw Error;
+const CustomError = require("../extensions/custom-error");
 
-  let month = date.getMonth();
-  
-  if(month>1 && month<5){
-    return 'spring';
+module.exports = function getSeason(date) {
+  if(typeof(date) == 'undefined'){
+  return 'Unable to determine the time of year!'
   }
-  if (month > 4 && month < 8) {
-    return 'summer';
-  }
-  if (month > 7 && month < 11) {
-    return 'autumn';
-  }
-  return 'winter';
+  if(!(Object.prototype.toString.call(date) === "[object Date]"))
+  throw new Error()
+ let month = date.getMonth();
+ if (month === 11 || month < 2) {
+   return 'winter'
+ } else if (month < 5) {
+   return 'spring'
+ } else if (month < 8) {
+   return 'summer'
+ } else {
+   return 'fall'
+ }
 };
