@@ -2,11 +2,11 @@ onst CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
   
-  if( date === undefined ) {
+  if ( date === undefined ) {
     return 'Unable to determine the time of year!';
   }
 
-  else if ( isNaN(date) ){
+  if (isNaN(date)){
     throw Error
   }
 
@@ -21,7 +21,5 @@ module.exports = function getSeason(date) {
   else if (month > 7 && month < 11) {
     return 'autumn';
   }
-  else {
     return 'winter';
-  }
 };
